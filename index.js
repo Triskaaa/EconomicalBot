@@ -731,7 +731,7 @@ $title[Reset]
 $description[Economy has been reset for all guilds]
 $footer[Economy Commands]
 $color[RANDOM]
-$onlyForIDs[921093686148886619;**⛔ You're not the owner of this bot**]` 
+$onlyForIDs[$getVar[owner];**⛔ You're not the owner of this bot**]` 
 })
 
 bot.command({
