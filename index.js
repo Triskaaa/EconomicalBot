@@ -802,10 +802,14 @@ bot.command({
   code: `
 $setGlobalUserVar[Wallet;$sum[$getUserVar[Wallet];$noMentionMessage];$mentioned[1]]
 
-$title[User Payed]
-$description[Payed **$noMentionMessage** 💲 to <@$mentioned[1]>]
-$footer[Payement succesful]
+$dm[$mentioned[1]]
+
+$title[You got payed]
+$description[**$username** ($authorID) gave you **$noMentionMessage** 💲 on \`$serverName\` server.]
+$footer[Payment succesful]
 $color[RANDOM]
+
+$channelSendMessage[$channelID;{title:User Payed}{description:Payed **$noMentionMessage** 💲 to <@$mentioned[1]>}{footer:Payement succesful}{color:RANDOM}]
 
 $onlyIf[$noMentionMessage<=$getGlobalUserVar[Wallet];**⛔ You don't have enough money in your wallet.** Please withdraw some from your bank.]
 $onlyIf[$noMentionMessage!=;**⛔ Please enter a amount of money to add.**]
