@@ -817,6 +817,32 @@ $onlyIf[$mentioned[1]!=;**⛔ Please mention someone.**]
 `
 })
 
+bot.command({
+ name: "roulette",
+ aliases: ["rl"],
+ code: `
+$title[$username's roulette game]
+$thumbnail[$authorAvatar]
+$setGlobalUserVar[Wallet;$sum[$getGlobalUserVar[Wallet];$replaceText[$replaceText[$checkCondition[$toLowercase[$message[2]]==$randomText[red;black]];true;$message[1]];false;-$message[1]]]]
+
+$description[You chosed $replaceText[$replaceText[$toLowercase[$message[2]];red;red];black;black]
+
+The correct choise was __**$randomText[red;black]!**__
+
+$replaceText[$replaceText[$checkCondition[$toLowercase[$message[2]]==$randomText[red;black]];true;You won ** $message[1] 💰**!];false;You lost **$message[1] 💰**] 
+
+Now you have: ** $sum[$getGlobalUserVar[Wallet];$replaceText[$replaceText[$checkCondition[$toLowercase[$message[2]]==$randomText[red;black]];true;$message[1]];false;-$message[1]]] 💰**]
+
+$color[RANDOM]
+$onlyIf[$message[1]<=$getGlobalUserVar[Wallet];**⛔ You can't bet more than what you have!**]
+$onlyIf[$isNumber[$message[1]]==true;⛔ **Your bet must be a number!**]
+$suppressErrors[⛔ **Incorrect usage.**  Please use : \`$getServerVar[prefix]roulette <bet> <red|black>\`]
+$onlyIf[$message[2]!=;⛔ **Incorrect usage.**  Please use : \`$getServerVar[prefix]roulette <bet> <red|black>\`]
+$footer[$username]
+$addTimestamp`
+
+})
+
 bot.variables({
   owner: "921093686148886619"
 })
