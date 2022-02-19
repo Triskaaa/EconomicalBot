@@ -1,4 +1,4 @@
-# EconomicalBoh
+# EconomicalBot
 A awesome and powerful discord economy bot.
 
 ## Setup
