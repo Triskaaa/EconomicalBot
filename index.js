@@ -807,7 +807,7 @@ $description[Payed **$noMentionMessage** 💲 to <@$mentioned[1]>]
 $footer[Payement succesful]
 $color[RANDOM]
 
-$onlyIf[$getUserVar[Wallet]>=$message[1];**⛔ You don't have enough money in your wallet.** Please withdraw some from your bank.]
+$onlyIf[$noMentionMessage<=$getGlobalUserVar[Wallet];**⛔ You don't have enough money in your wallet.** Please withdraw some from your bank.]
 $onlyIf[$noMentionMessage!=;**⛔ Please enter a amount of money to add.**]
 $onlyIf[$mentioned[1]!=;**⛔ Please mention someone.**]
 `
