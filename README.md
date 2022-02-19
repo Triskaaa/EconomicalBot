@@ -8,4 +8,5 @@ Then `npm i aoi.js@4.5.0` in the terminal.
 ## Launching
 `node index.js`
 
-*enyoj ;)*
+*enjoy
+ ;)*
