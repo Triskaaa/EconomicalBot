@@ -53,14 +53,17 @@ bot.command({
   code: `
   $title[Help Menu]
   $description[💰 **Economy :**
-  \`work\`, \`beg\`, \`bal\`, \`profile\`, \`deposit\`, \`withdraw\`, \`daily\`, \`open-daily\`, \`heist\`, \`givemoney\`, \`shop\`, \`buy-<object>\`, \`open-<chest>\`, \`rob\`, \`steal\`, \`search\`, \`srap-<object>\`, \`filp-<object>\`, \`fish\`, \`lb-bank\`, \`lb-wallet\`
+  \`work\`, \`beg\`, \`bal\`, \`profile\`, \`deposit\`, \`withdraw\`, \`daily\`, \`open-daily\`, \`heist\`, \`givemoney\`, \`shop\`, \`buy-<object>\`, \`open-<chest>\`, \`rob\`, \`steal\`, \`search\`, \`srap-<object>\`, \`filp-<object>\`, \`fish\`, \`lb-bank\`, \`lb-wallet\`, \`pay <user> <amount>\`
+
+:tada: **Games :**
+\`roulette\`
 
 🎋 **Admin:**
 \`setprefix\`
 
 👑 **Owner :**
-\`reset\`, \`add-money\`, \`remove-money\`]
-$footer[$username[$clientID]]
+\`reset\`, \`add-money\`, \`remove-money\`, \`add-xp\`, \`remove-money\`]
+$footer[$username;$authorAvatar]
 $addTimestamp
 $color[RANDOM]
 `
