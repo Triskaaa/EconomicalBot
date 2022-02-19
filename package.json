@@ -1,0 +1,24 @@
+{
+  "name": "EconomicalBot",
+  "version": "1.0.0",
+  "description": "A awesome and powerful discord economy bot.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Triskaaa/EconomicalBot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Triskaaa/EconomicalBot/issues"
+  },
+  "homepage": "https://github.com/Triskaaa/EconomicalBot#readme",
+  "dependencies": {
+    "aoi.js": "^4.5.0"
+  }
+}
