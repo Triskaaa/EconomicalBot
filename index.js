@@ -741,7 +741,7 @@ $color[RANDOM]
 
 $onlyIf[$noMentionMessage!=;**⛔ Please enter a amount of money to add.**]
 $onlyIf[$mentioned[1]!=;**⛔ Please mention someone.**]
-$onlyPerms[admin;**⛔ You can't do this.**]` 
+$onlyForIDs[$getVar[owner];**⛔ You can't do this.**]` 
 })
 
 bot.command({
@@ -754,7 +754,7 @@ $color[RANDOM]
 
 $onlyIf[$noMentionMessage!=;**⛔ Please enter a amount of money to remove.**]
 $onlyIf[$mentioned[1]!=;**⛔ Please mention someone.**]
-$onlyPerms[admin;**⛔ You can't do this.**]` 
+$onlyForIDs[$getVar[owner];**⛔ You can't do this.**]` 
 })
 
 bot.command({
@@ -769,4 +769,50 @@ $color[RANDOM]
 $setServerVar[prefix;$message]
 $onlyIf[$message[1]!=;**You have to put a prefix, example** \`$getServerVar[prefix]setprefix /\`]
 $onlyPerms[admin;:x: **You dont have** \`ADMIN\` **perms**]`
+})
+
+bot.command({
+name: "add-xp", 
+code: `$setGlobalUserVar[XP;$sum[$getUserVar[XP];$noMentionMessage];$mentioned[1]]
+$title[XP Added]
+$description[Added **$noMentionMessage** 🗡️ to <@$mentioned[1]>]
+$footer[Add-XP]
+$color[RANDOM]
+
+$onlyIf[$noMentionMessage!=;**⛔ Please enter a amount of XP to add.**]
+$onlyIf[$mentioned[1]!=;**⛔ Please mention someone.**]
+$onlyForIDs[$getVar[owner];**⛔ You can't do this.**]` 
+})
+
+bot.command({
+name: "remove-xp", 
+code: `$setGlobalUserVar[XP;$sub[$getUserVar[XP];$noMentionMessage];$mentioned[1]]
+$title[XP Removed]
+$description[Removed **$noMentionMessage** 🗡️ to <@$mentioned[1]>]
+$footer[Remove-XP]
+$color[RANDOM]
+
+$onlyIf[$noMentionMessage!=;**⛔ Please enter a amount of XP to remove.**]
+$onlyIf[$mentioned[1]!=;**⛔ Please mention someone.**]
+$onlyForIDs[$getVar[owner];**⛔ You can't do this.**]` 
+})
+
+bot.command({
+  name: "pay",
+  code: `
+$setGlobalUserVar[Wallet;$sum[$getUserVar[Wallet];$noMentionMessage];$mentioned[1]]
+
+$title[User Payed]
+$description[Payed **$noMentionMessage** 💲 to <@$mentioned[1]>]
+$footer[Payement succesful]
+$color[RANDOM]
+
+$onlyIf[$getUserVar[Wallet]>=$message[1];**⛔ You don't have enough money in your wallet.** Please withdraw some from your bank.]
+$onlyIf[$noMentionMessage!=;**⛔ Please enter a amount of money to add.**]
+$onlyIf[$mentioned[1]!=;**⛔ Please mention someone.**]
+`
+})
+
+bot.variables({
+  owner: "921093686148886619"
 })
