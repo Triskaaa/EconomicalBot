@@ -62,7 +62,7 @@ bot.command({
 \`setprefix\`
 
 👑 **Owner :**
-\`reset\`, \`add-money\`, \`remove-money\`, \`add-xp\`, \`remove-money\`]
+\`reset\`, \`add-money\`, \`remove-money\`, \`add-xp\`, \`remove-xp\`]
 $footer[$username;$authorAvatar]
 $addTimestamp
 $color[RANDOM]
