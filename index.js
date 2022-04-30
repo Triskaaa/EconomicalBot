@@ -736,7 +736,7 @@ $onlyForIDs[$getVar[owner];**⛔ You're not the owner of this bot**]`
 
 bot.command({
 name: "add-money", 
-code: `$setGlobalUserVar[Wallet;$sum[$getUserVar[Wallet];$noMentionMessage];$mentioned[1]]
+code: `$setGlobalUserVar[Wallet;$sum[$getGlobalUserVar[Wallet];$noMentionMessage];$mentioned[1]]
 $title[Money Added]
 $description[Added **$noMentionMessage** 💲 to <@$mentioned[1]>]
 $footer[Add-money]
@@ -749,7 +749,7 @@ $onlyForIDs[$getVar[owner];**⛔ You can't do this.**]`
 
 bot.command({
 name: "remove-money", 
-code: `$setGlobalUserVar[Wallet;$sub[$getUserVar[Wallet];$noMentionMessage];$mentioned[1]]
+code: `$setGlobalUserVar[Wallet;$sub[$getGlobalUserVar[Wallet];$noMentionMessage];$mentioned[1]]
 $title[Money Removed]
 $description[Removed **$noMentionMessage** 💲 to <@$mentioned[1]>]
 $footer[Remove-money]
